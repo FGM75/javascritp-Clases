@@ -29,6 +29,7 @@ const Jaime = new Luchador("Jaime", "Lannister", 40, "espadon");
 console.log(Jaime);
 
 /* class Acciones extends Personajes {
+
   rey = false;
   luchador = false;
   asesor = false;
@@ -67,12 +68,24 @@ console.log(Jaime);
   }
 } */
 
-let joffrey = new Acciones("el muerto", "este", 17, "coño");
-joffrey.morir();
-joffrey.escudero;
-joffrey.comunicar();
-joffrey.hacerRey();
+
+class Rey extends Personajes {
+  añosDeReinado;
+  mensajeRey = "Vais a morir todos";
+  constructor(nombre, familia, edad, añosDeReinado) {
+    super(nombre, familia, edad,);
+    this.añosDeReinado = añosDeReinado;
+   
+  }
+  hablar(){
+     console.log(this.mensajeRey);
+  }
+
+}
+const joffrey = new Rey("Joffrey", "Lannister", 17, 3);
+joffrey.hablar();
 console.log(joffrey);
+
 
 const daenerys = new Rol(
   "Daenerys",
@@ -86,3 +99,4 @@ console.log(daenerys);
 const tyrion = new Rol("Tyrion", "Lannister", 89, "holita");
 daenerys.comunicar();
 console.log(daenerys);
+
