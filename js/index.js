@@ -68,24 +68,20 @@ console.log(Jaime);
   }
 } */
 
-
 class Rey extends Personajes {
   añosDeReinado;
   mensajeRey = "Vais a morir todos";
   constructor(nombre, familia, edad, añosDeReinado) {
-    super(nombre, familia, edad,);
+    super(nombre, familia, edad);
     this.añosDeReinado = añosDeReinado;
-   
   }
-  hablar(){
-     console.log(this.mensajeRey);
+  hablar() {
+    console.log(this.mensajeRey);
   }
-
 }
 const joffrey = new Rey("Joffrey", "Lannister", 17, 3);
 joffrey.hablar();
 console.log(joffrey);
-
 
 const daenerys = new Rol(
   "Daenerys",
@@ -100,3 +96,30 @@ const tyrion = new Rol("Tyrion", "Lannister", 89, "holita");
 daenerys.comunicar();
 console.log(daenerys);
 
+class escudero extends Personajes {
+  nivelpelotismo;
+  mensajeEscudero;
+  personajeAlQueSirve;
+
+  constructor(
+    nombre,
+    familia,
+    edad,
+    nivelpelotismo,
+    mensajeEscudero,
+    personajeAlQueSirve
+  ) {
+    super(nombre, familia, edad);
+    this.nivelpelotismo = nivelpelotismo;
+    this.mensajeEscudero = "Soy un Loser L";
+    this.personajeAlQueSirve = jaime;
+  }
+}
+const bronn = new escudero(
+  "Bronn",
+  "NuNAFamily",
+  78,
+  6,
+  mensajeEscudero,
+  "jaime"
+);
