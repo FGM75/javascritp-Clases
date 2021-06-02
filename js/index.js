@@ -13,10 +13,22 @@ class Personajes {
   morir() {
     this.vivo = false;
   }
- 
 }
 
-class Acciones extends Personajes {
+class Luchador extends Personajes {
+  destreza = Math.floor(Math.random() * 11);
+  arma;
+  mensajeLuchador = "Primero pego y luego pregunto";
+  constructor(nombre, familia, edad, arma) {
+    super(nombre, familia, edad);
+    this.arma = arma;
+  }
+}
+const Jaime = new Luchador("Jaime", "Lannister", 40, "espadon");
+
+console.log(Jaime);
+
+/* class Acciones extends Personajes {
   rey = false;
   luchador = false;
   asesor = false;
@@ -53,7 +65,7 @@ class Acciones extends Personajes {
     this.escudero = true;
     //return this.comunicar("Soy un loser");
   }
-}
+} */
 
 let joffrey = new Acciones("el muerto", "este", 17, "coño");
 joffrey.morir();
