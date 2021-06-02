@@ -2,22 +2,31 @@ class Personajes {
   nombre;
   familia;
   edad;
-  vivo = true;
+  vivo;
   constructor(nombre, familia, edad, vivo) {
     this.nombre = nombre;
     this.familia = familia;
     this.edad = edad;
-    this.estado = estado;
+    this.vivo = vivo;
   }
   comunicar(mensaje) {
     return `${mensaje}`;
   }
-  morir(estado) {
-    estado = "muerto";
+  morir() {
+    this.vivo = false;
   }
 }
 
 
-const joffrey = new Personajes("Joffrey Baratheon", "Baratheon", 17, "vivo");
-joffrey.morir();
-console.log(joffrey);
+// const joffrey = new Personajes("Joffrey Baratheon", "Baratheon", 17, true);
+// joffrey.morir();
+// console.log(joffrey);
+
+class Rol extends Personajes {
+  rey;
+  luchador;
+  asesor;
+  escudero;
+  
+
+}
