@@ -17,6 +17,10 @@ class Personajes {
   morir() {
     this.vivo = false;
   }
+  rey() {
+    this.rey = true;
+    console.log(this.comunicar());
+  }
 }
 
 class Rol extends Personajes {
@@ -31,10 +35,7 @@ class Rol extends Personajes {
   arma() {
     return Math.floor(Math.random() * 11) + "destreza arma";
   }
-  rey() {
-    this.rey = true;
-    console.log(this.comunicar());
-  }
+
   luchador() {
     this.luchador = true;
     const armaLuchador = arma();
@@ -46,11 +47,25 @@ class Rol extends Personajes {
   }
   escudero() {
     this.escudero = true;
-    return this.comunicar("Soy un loser");
+    //return this.comunicar("Soy un loser");
   }
 }
 
 let joffrey = new Rol("el muerto", "este", 17, "coño");
 joffrey.morir();
+joffrey.escudero;
 joffrey.comunicar();
 console.log(joffrey);
+
+const daenerys = new Rol(
+  "Daenerys",
+  "Targaryen",
+  25,
+  "primero pego luego pregunto"
+);
+daenerys.comunicar();
+console.log(daenerys);
+
+const tyrion = new Rol("Tyrion", "Lannister", 89, "holita");
+daenerys.comunicar();
+console.log(daenerys);
