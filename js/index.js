@@ -13,6 +13,7 @@ class Personajes {
   morir() {
     this.vivo = false;
   }
+ 
 }
 
 class Acciones extends Personajes {
@@ -50,12 +51,26 @@ class Acciones extends Personajes {
   }
   escudero() {
     this.escudero = true;
-    return this.comunicar("Soy un loser");
+    //return this.comunicar("Soy un loser");
   }
 }
 
 let joffrey = new Acciones("el muerto", "este", 17, "coño");
 joffrey.morir();
+joffrey.escudero;
 joffrey.comunicar();
 joffrey.hacerRey();
 console.log(joffrey);
+
+const daenerys = new Rol(
+  "Daenerys",
+  "Targaryen",
+  25,
+  "primero pego luego pregunto"
+);
+daenerys.comunicar();
+console.log(daenerys);
+
+const tyrion = new Rol("Tyrion", "Lannister", 89, "holita");
+daenerys.comunicar();
+console.log(daenerys);
