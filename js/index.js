@@ -20,6 +20,7 @@ class Personajes {
 }
 
 class Rol extends Personajes {
+
   rey = false;
   luchador = false;
   asesor = false;
@@ -50,7 +51,21 @@ class Rol extends Personajes {
   }
 }
 
-let joffrey = new Rol("el muerto", "este", 17, "coño");
-joffrey.morir();
-joffrey.comunicar();
+
+class Rey extends Personajes {
+  añosDeReinado;
+  mensajeRey = "Vais a morir todos";
+  constructor(nombre, familia, edad, añosDeReinado) {
+    super(nombre, familia, edad,);
+    this.añosDeReinado = añosDeReinado;
+   
+  }
+  hablar(){
+     console.log(this.mensajeRey);
+  }
+
+}
+const joffrey = new Rey("Joffrey", "Lannister", 17, 3);
+joffrey.hablar();
 console.log(joffrey);
+
