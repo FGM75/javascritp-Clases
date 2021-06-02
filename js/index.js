@@ -3,43 +3,60 @@ class Personajes {
   familia;
   edad;
   vivo = true;
-  mensaje;
-  constructor(nombre, familia, edad, mensaje) {
+  constructor(nombre, familia, edad) {
     this.nombre = nombre;
     this.familia = familia;
     this.edad = edad;
-    this.mensaje = mensaje;
   }
-  comunicar(mensaje) {
-    console.log(`${this.mensaje}`);
-  }
+
   //importante
   morir() {
     this.vivo = false;
   }
 }
 
-class Rol extends Personajes {
+class Luchador extends Personajes {
+  destreza = Math.floor(Math.random() * 11);
+  arma;
+  mensajeLuchador = "Primero pego y luego pregunto";
+  constructor(nombre, familia, edad, arma) {
+    super(nombre, familia, edad);
+    this.arma = arma;
+  }
+}
+const Jaime = new Luchador("Jaime", "Lannister", 40, "espadon");
+
+console.log(Jaime);
+
+/* class Acciones extends Personajes {
 
   rey = false;
   luchador = false;
   asesor = false;
   escudero = false;
-
-  constructor(nombre, familia, edad, mensaje) {
-    super(nombre, familia, edad, mensaje);
+  mensaje2 = {
+    mensajeRey: "Primero pego y luego pregunto",
+    mensajeEscudero: "cosa",
+    mens,
+  };
+  comunicar(mensaje) {
+    console.log(`${this.mensaje}`);
+  }
+  constructor(nombre, familia, edad) {
+    super(nombre, familia, edad);
   }
   arma() {
     return Math.floor(Math.random() * 11) + "destreza arma";
   }
-  rey() {
+  hacerRey() {
     this.rey = true;
-    console.log(this.comunicar());
+    this.mensaje2.mensajeRey;
   }
+
   luchador() {
     this.luchador = true;
     const armaLuchador = arma();
-    return this.comunicar("Primero pego y luego pregunto") + armaLuchador;
+    return this.comunicar("Primero pego y luego pregunto");
   }
   asesor() {
     this.asesor = true;
@@ -47,9 +64,9 @@ class Rol extends Personajes {
   }
   escudero() {
     this.escudero = true;
-    return this.comunicar("Soy un loser");
+    //return this.comunicar("Soy un loser");
   }
-}
+} */
 
 
 class Rey extends Personajes {
@@ -68,4 +85,18 @@ class Rey extends Personajes {
 const joffrey = new Rey("Joffrey", "Lannister", 17, 3);
 joffrey.hablar();
 console.log(joffrey);
+
+
+const daenerys = new Rol(
+  "Daenerys",
+  "Targaryen",
+  25,
+  "primero pego luego pregunto"
+);
+daenerys.comunicar();
+console.log(daenerys);
+
+const tyrion = new Rol("Tyrion", "Lannister", 89, "holita");
+daenerys.comunicar();
+console.log(daenerys);
 
