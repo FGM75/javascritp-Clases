@@ -3,43 +3,47 @@ class Personajes {
   familia;
   edad;
   vivo = true;
-  mensaje;
-  constructor(nombre, familia, edad, mensaje) {
+  constructor(nombre, familia, edad) {
     this.nombre = nombre;
     this.familia = familia;
     this.edad = edad;
-    this.mensaje = mensaje;
   }
-  comunicar(mensaje) {
-    console.log(`${this.mensaje}`);
-  }
+
   //importante
   morir() {
     this.vivo = false;
   }
-  rey() {
-    this.rey = true;
-    console.log(this.comunicar());
-  }
+ 
 }
 
-class Rol extends Personajes {
+class Acciones extends Personajes {
   rey = false;
   luchador = false;
   asesor = false;
   escudero = false;
-
-  constructor(nombre, familia, edad, mensaje) {
-    super(nombre, familia, edad, mensaje);
+  mensaje2 = {
+    mensajeRey: "Primero pego y luego pregunto",
+    mensajeEscudero: "cosa",
+    mens,
+  };
+  comunicar(mensaje) {
+    console.log(`${this.mensaje}`);
+  }
+  constructor(nombre, familia, edad) {
+    super(nombre, familia, edad);
   }
   arma() {
     return Math.floor(Math.random() * 11) + "destreza arma";
+  }
+  hacerRey() {
+    this.rey = true;
+    this.mensaje2.mensajeRey;
   }
 
   luchador() {
     this.luchador = true;
     const armaLuchador = arma();
-    return this.comunicar("Primero pego y luego pregunto") + armaLuchador;
+    return this.comunicar("Primero pego y luego pregunto");
   }
   asesor() {
     this.asesor = true;
@@ -51,10 +55,11 @@ class Rol extends Personajes {
   }
 }
 
-let joffrey = new Rol("el muerto", "este", 17, "coño");
+let joffrey = new Acciones("el muerto", "este", 17, "coño");
 joffrey.morir();
 joffrey.escudero;
 joffrey.comunicar();
+joffrey.hacerRey();
 console.log(joffrey);
 
 const daenerys = new Rol(
