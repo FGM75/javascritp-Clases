@@ -2,13 +2,13 @@ class Personajes {
   nombre;
   familia;
   edad;
+  serie= "Juego de Tronos";
   vivo = true;
   constructor(nombre, familia, edad) {
     this.nombre = nombre;
     this.familia = familia;
     this.edad = edad;
   }
-  //importante
   morir() {
     this.vivo = false;
   }
@@ -24,7 +24,16 @@ class Luchador extends Personajes {
   }
 }
 
-const jaime = new Luchador("Jaime", "Lannister", 40, "espadon");
+class Asesor extends Personajes {
+  arma;
+  asesoriamiento = daenerys.nombre;
+  mensajeAsesor ="No sé por qué, pero creo que voy a morir pronto";
+  constructor(nombre, familia, edad,arma) {
+    super(nombre, familia, edad);
+    this.arma = arma;
+  }
+}
+
 
 class Rey extends Personajes {
   añosDeReinado;
@@ -38,10 +47,6 @@ class Rey extends Personajes {
   }
 }
 
-const joffrey = new Rey("Joffrey", "Lannister", 17, 3);
-joffrey.hablar();
-console.log(joffrey);
-
 class Escudero extends Personajes {
   nivelpelotismo;
   mensajeEscudero;
@@ -54,5 +59,10 @@ class Escudero extends Personajes {
     super(nombre, familia, edad);
   }
 }
+
+const tyrion = new Asesor("Tyrion", "Lannister",36, "ballesta");
+const jaime = new Luchador("Jaime", "Lannister", 40, "espadon");
+const tywin = new Asesor("Tywin", "Lannister", 89,"ninguna");
+const daenerys = new Luchador("Jaime", "Lannister", 40, "guantazo");
+const joffrey = new Rey("Joffrey", "Lannister", 17, 3);
 const bronn = new Escudero("Bronn", "NuNAFamily", 78);
-console.log(Personajes);
