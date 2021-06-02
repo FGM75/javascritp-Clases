@@ -3,46 +3,37 @@ class Personajes {
   familia;
   edad;
   vivo = true;
-  rey = false;
-  luchador = false;
-  asesor = false;
-  escudero = false;
-  constructor(nombre, familia, edad) {
+  mensaje;
+  constructor(nombre, familia, edad, mensaje) {
     this.nombre = nombre;
     this.familia = familia;
     this.edad = edad;
+    this.mensaje = mensaje;
   }
   comunicar(mensaje) {
-    return `${mensaje}`;
+    console.log(`${this.mensaje}`);
   }
+  //importante
   morir() {
     this.vivo = false;
   }
 }
-
-console.log(Math.floor(Math.random() * 11));
 
 class Rol extends Personajes {
   rey = false;
   luchador = false;
   asesor = false;
   escudero = false;
-  constructor(nombre, familia, edad, rey, luchador, asesor, escudero) {
-    super(nombre, familia, edad);
-    this.asesor = asesor;
-    this.luchador = luchador;
-    this.rey = rey;
-    this.escudero = escudero;
-  }
-  comunicar(mensaje) {
-    return `${mensaje}`;
+
+  constructor(nombre, familia, edad, mensaje) {
+    super(nombre, familia, edad, mensaje);
   }
   arma() {
     return Math.floor(Math.random() * 11) + "destreza arma";
   }
   rey() {
     this.rey = true;
-    console.log(this.comunicar("Vais a morir todos"));
+    console.log(this.comunicar());
   }
   luchador() {
     this.luchador = true;
@@ -58,7 +49,8 @@ class Rol extends Personajes {
     return this.comunicar("Soy un loser");
   }
 }
-const joffrey = new Rol("Joffrie", "Baratheon", 17, true, false, false, false);
-console.log(joffrey);
 
-const jaime = new Rol("Jaime", "Lannister", 40, true, false, false, false)
+let joffrey = new Rol("el muerto", "este", 17, "coño");
+joffrey.morir();
+joffrey.comunicar();
+console.log(joffrey);
